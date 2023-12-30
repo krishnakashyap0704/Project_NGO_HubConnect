@@ -1,0 +1,95 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+form{
+    display: block;
+    background-color: white;
+    box-shadow: 1px 1px 3px 2px #ddd;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-right: 80px;
+    margin-bottom: 40px;
+    max-width: 500px;
+    max-height: 700px;
+    padding: 20px 40px;
+    text-align: center;
+    border-radius: 5%;
+}
+
+form input, textarea{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 8px auto;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid #ddd;
+
+}
+
+form button{
+    height: 30px;
+    width: 80px;
+    align-items: center;
+    border: none;
+    background-color: rgb(29, 185, 237);
+    color: #fff;
+    cursor: pointer;
+}
+
+.formtitle{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: limegreen;
+}
+
+.formcontent{
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+label{
+    font-size: 14px;
+
+}
+
+.Query{
+    display: block;
+    background-color: white;
+    box-shadow: 1px 1px 3px 2px #ddd;
+    margin-left: 80px;
+    margin-right: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    max-width: 500px;
+    height: 700px;
+    padding: 20px 40px;
+    text-align: left;
+    border-radius: 5%;
+}
+
+.Querytitle{
+    font-size: 15px;
+    color: green;
+    font-weight: bold;
+}
+
+.Querycontent{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+   form, .Query, .Querycontent, .Querytitle{
+     font-size: 0.8em;
+  }
+}  

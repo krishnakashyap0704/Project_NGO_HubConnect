@@ -1,0 +1,38 @@
+.secondary{
+    background-color: #99959C;
+    height: 50px;
+  }
+  
+  .navquote{
+    color: white;
+    font-size: 18px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  
+  .navconnect{
+    color: darkgreen;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .Navlink{
+    color: black;
+  }
+
+  .Navlink:hover {
+    transform: scale(1.05);
+   }
+  
+  @media (max-width: 768px) {
+    .navquote, .navconnect, .secondary {
+     font-size: 0.5em;
+  }
+  }
+
+
+  /* <Navbar  data-bs-theme="dark" className="secondary">
+        <Container className="secondary-con">
+          <h5 ><span className="navconnect">Connect with NGOHubConnect </span><span className="navquote"> because "There is no exercise better for the heart than reaching down and lifting people up."</span></h5>
+        </Container>
+      </Navbar> */
