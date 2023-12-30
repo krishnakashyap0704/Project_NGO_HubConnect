@@ -1,11 +1,11 @@
 import { Button, Container, Form, Alert } from "react-bootstrap";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { LoginProfile } from "../Services/RegistrationApi";
+import { LoginProfile } from "./Services/UserApiService";
 
 export function Login(){
     const navigate=useNavigate();
-    const [formData,setFormData]=useState({email:"",password:""});
+    const [formData,setFormData]=useState({phone:"",password:""});
     const [loginError,setLoginError]=useState(false);
 
     const handleChange=(e)=>{
@@ -32,19 +32,19 @@ export function Login(){
             <Form onSubmit={handleSubmit} style={{ width: '300px' }}>
                 <h2 className="mb-3">Login</h2>
                 <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name="email" placeholder="Enter your Email Address" onChange={handleChange}/>
+                    <Form.Label>Mobile No</Form.Label>
+                    <Form.Control type="number" name="phone" placeholder="Enter mobile number" onChange={handleChange}/>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name="password" placeholder="Enter your Password" onChange={handleChange}/>
+                    <Form.Control type="password" name="password" placeholder="Enter password" onChange={handleChange}/>
                 </Form.Group><br/>
 
                 <Button variant="primary" type="submit">
                     Sign in
                 </Button><br/><br/>
-                <h6>Don't have a account? <Link to="/Register">Register Now</Link></h6>
+                <h6>Don't have a account? <Link to="/register">Register Now</Link></h6>
                 </Form>
             {loginError?<Alert variant="danger" className="mt-3">Invalid phone or password</Alert>:null}
         </Container>
