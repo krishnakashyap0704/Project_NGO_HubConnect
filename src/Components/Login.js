@@ -1,4 +1,4 @@
-import { Button, Container, Form, Alert } from "react-bootstrap";
+import {Form, Alert } from "react-bootstrap";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { LoginProfile } from "./Services/UserApiService";
@@ -33,8 +33,8 @@ export function Login() {
 
     return (
         <div className="d-flex" >
-            <Form onSubmit={handleSubmit} style={{ width: '300px' }} className="Loginform">
-                <h2 className="mb-3">Login</h2>
+            <Form onSubmit={handleSubmit}  className="Loginform">
+                <div className="logintitle"><h2 className="mb-3">Login</h2></div>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label className="label">Mobile No</Form.Label>
                     <Form.Control type="number" name="phone" placeholder="Enter mobile number" onChange={handleChange}/>
@@ -44,11 +44,9 @@ export function Login() {
                     <Form.Label className="label">Password</Form.Label>
                     <Form.Control type="password" name="password" placeholder="Enter password" onChange={handleChange}/>
                 </Form.Group><br/>
-
-                <Button variant="primary" type="submit" className="loginbutton">
-                    Sign in
-                </Button><br /><br />
-                <h6>Don't have a account? <Link to="/register">Register Now</Link></h6>
+                <div  className="logintitle">
+                <button type="submit" className="Registerbutton">Login</button><br /><br />
+                <h6>Don't have a account? <Link to="/register">Register Now</Link></h6></div>
              </Form>
             {loginError?<Alert variant="danger" className="mt-3">Invalid phone or password</Alert>:null}
         </div>

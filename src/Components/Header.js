@@ -28,10 +28,10 @@ export function Header(){
 
               <Nav.Link href="#" className="Navlink">NGO Directory</Nav.Link>
               <NavDropdown id="collapsible-nav-dropdown" >
-                <NavDropdown.Item href="#action/3.1"> 
+                <NavDropdown.Item href="/ngodirectory"> 
                   NGO's (State-wise){" "}
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
+                <NavDropdown.Item href="/ngodirectory">
                   NGO's (Sector-wise)
                 </NavDropdown.Item>
               </NavDropdown>
@@ -40,10 +40,10 @@ export function Header(){
             <Nav>
             <Nav.Link href="#" className="Navlink">Register/Login</Nav.Link>
               <NavDropdown id="collapsible-nav-dropdown">
-                <NavDropdown.Item href="/adminLogin" className="Navlink">Admin</NavDropdown.Item>
-                <NavDropdown.Item href="/register" className="Navlink">Register</NavDropdown.Item>
-                <NavDropdown.Item href="/login" className="Navlink">Login</NavDropdown.Item>
-                <NavDropdown.Item href="#" className="Navlink">Support</NavDropdown.Item>
+                <NavDropdown.Item href="/adminLogin" >Admin</NavDropdown.Item>
+                <NavDropdown.Item href="/register">Register</NavDropdown.Item>
+                <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                <NavDropdown.Item href="#" >Support</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

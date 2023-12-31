@@ -1,4 +1,4 @@
-import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Alert, Col, Form, Row } from "react-bootstrap";
 import { useState } from "react";
 import { saveRegister } from "./Services/UserApiService";
 import { useNavigate } from "react-router-dom";
@@ -101,7 +101,7 @@ export function Register() {
                             <Form.Control type="password" placeholder="Confirm Password" name="confirmPassword" onKeyUp={handleChange} required />
                         </Form.Group>
                         <div className="buttondiv">
-                        <Button className="formbutton" variant="primary" type="submit">Register</Button>
+                        <button type="submit" className="Registerbutton">Register</button>
                         </div>
                     </Form>
 

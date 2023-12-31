@@ -1,7 +1,8 @@
-import { Button, Container, Form, Alert } from "react-bootstrap";
+import {Form, Alert } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginProfile } from "./Services/AdminApiService";
+import './Style/AdminHome.css';
 
 export function AdminLogin() {
     const navigate = useNavigate();
@@ -31,9 +32,9 @@ export function AdminLogin() {
     }
 
     return (
-        <Container className="d-flex align-items-center justify-content-center" style={{ height: '56vh' }}>
-            <Form onSubmit={handleSubmit} style={{ width: '300px' }}>
-                <h2 className="mb-3">Admin Login</h2>
+        <div className="A-d-flex">
+            <Form onSubmit={handleSubmit} className="A-Loginform">
+                <div className="A-logintitle"><h2 className="mb-3">Admin Login</h2></div>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email</Form.Label>
                     <Form.Control type="email" name="adminEmail" placeholder="Enter email" onChange={handleChange} />
@@ -44,11 +45,10 @@ export function AdminLogin() {
                     <Form.Control type="password" name="adminPassword" placeholder="Enter password" onChange={handleChange} />
                 </Form.Group><br />
 
-                <Button variant="primary" type="submit">
-                    Sign in
-                </Button><br /><br />
+                <div  className="A-logintitle">
+                <button type="submit" className="Registerbutton">Login</button></div><br /><br />
             </Form>
             {loginError ? <Alert variant="danger" className="mt-3">Invalid phone or password</Alert> : null}
-        </Container>
+        </div>
     );
 }

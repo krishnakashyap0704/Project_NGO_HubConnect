@@ -9,8 +9,8 @@ export function About(){
           <div className="row">
             <div className="col-12">
               <div class="page-title">
-                <h1 className="text-white px-2">
-                  <strong>About Us</strong>
+                <h1 className="text-black px-2">
+                  About Us
                 </h1>
               </div>
             <div>
