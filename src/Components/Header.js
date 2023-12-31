@@ -3,7 +3,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import './Style/Header.css';
-import logo from "./Image/logo.png";
 
 export function Header(){
     return (
@@ -24,7 +23,7 @@ export function Header(){
             <Nav className="me-auto">
             <Nav.Link href="/" className="Navlink">Home</Nav.Link>
               <Nav.Link href="/about" className="Navlink">About us</Nav.Link>
-              <Nav.Link href="/registerevent" className="Navlink">Events</Nav.Link> 
+              <Nav.Link href="/events" className="Navlink">Events</Nav.Link> 
 
               <Nav.Link href="#" className="Navlink">NGO Directory</Nav.Link>
               <NavDropdown id="collapsible-nav-dropdown" >

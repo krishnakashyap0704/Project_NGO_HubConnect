@@ -14,6 +14,7 @@ import { AdminLogin } from './Components/AdminHome.js';
 import { AdminService } from './Components/AdminService.js';
 import { UpdateUser } from './Components/UpdateUser.js';
 import { NgoDirectory } from "./Components/NgoDirectory.js";
+import { Events } from './Components/Events.js';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
     <Route path='/adminService' element={<AdminService/>}></Route>
     <Route path='/updateUser/:id' element={<UpdateUser/>}></Route>
     <Route path='/ngodirectory' element={<NgoDirectory/>}></Route>
+    <Route path='/events' element={<Events/>}></Route>
 
     </Routes>
     <Footer/>
