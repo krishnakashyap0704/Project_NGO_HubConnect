@@ -4,27 +4,30 @@ import { Link, useNavigate } from "react-router-dom";
 import { LoginProfile } from "./Services/UserApiService";
 import './Style/Login.css';
 
-export function Login(){
-    const navigate=useNavigate();
-    const [formData,setFormData]=useState({phone:"",password:""});
-    const [loginError,setLoginError]=useState(false);
+export function Login() {
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState({ phone: "", password: "" });
+    const [loginError, setLoginError] = useState(false);
 
-    const handleChange=(e)=>{
-        setFormData({...formData,[e.target.name]:e.target.value});
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     }
 
-    const handleSubmit=async(e)=>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const result= await LoginProfile(formData);
-          console.log(result);
-          localStorage.setItem("token",result.token);
-          navigate("/");
+            const result = await LoginProfile(formData);
+            console.log(result);
+            if (result.status) {
+                navigate('/');
+            }else{
+                setLoginError(true);
+                setTimeout(() => {
+                    setLoginError(false);
+                }, 3000);
+            }
         } catch (error) {
-            setLoginError(true);
-            setTimeout(() => {
-                setLoginError(false);
-              }, 3000);
+           console.log(error);
         }
     }
 
@@ -44,9 +47,9 @@ export function Login(){
 
                 <Button variant="primary" type="submit" className="loginbutton">
                     Sign in
-                </Button><br/><br/>
+                </Button><br /><br />
                 <h6>Don't have a account? <Link to="/register">Register Now</Link></h6>
-                </Form>
+             </Form>
             {loginError?<Alert variant="danger" className="mt-3">Invalid phone or password</Alert>:null}
         </div>
     );
