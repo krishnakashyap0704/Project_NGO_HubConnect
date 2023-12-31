@@ -4,7 +4,7 @@ import { fetchEvents, registerEvent } from "./Services/EventService.js";
 
 export const Events = () => {
 
-    var userId = 30;
+    var userId = 31;
     const [events, setEvents] = useState([]);
     const [showDialog, setShowDialog] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState("");
@@ -43,30 +43,18 @@ export const Events = () => {
 
     return (
         <>
-            <h2>Upcoming Events</h2>
-
             <div className="container">
-                <div className="row py-4">
-                    <div className="col-12">
-                        <div className="page-title">
-                            <h1 className="text-white px-2">
-                                <strong>Events</strong>
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-                <Row>
+            <h2>Upcoming Events</h2>
+                <Row className="justify-content-md-center">
                     {events.map((ev) => (
-                        <Col lg={6} md={12} >
-                            <div className="row py-6">
-                                <div className="col-lg-6 p-2 col-6 h-100">
-                                    <Card>
+                        <Col lg={3}>
+                                    <Card style={{ height: "700px", width: "280px" , borderRadius:"2%"}}>
                                         <Card.Img
                                             variant="top"
                                             src={process.env.PUBLIC_URL + ev.image}
-                                            style={{ height: "300px" }}
+                                            style={{ height: "300px", width: "248px", marginTop: "10px" }}
                                         />
-                                        <Card.Body>
+                                        <Card.Body style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                                             <Card.Title>{ev.name}</Card.Title>
                                             <Card.Text className="mb-1">Location: {ev.location}</Card.Text>
                                             <Card.Text className="mb-1">Date: {new Date(ev.datetime).toLocaleDateString()}</Card.Text>
@@ -81,10 +69,6 @@ export const Events = () => {
                                             }}>Register</Button>
                                         </Card.Body>
                                     </Card>
-
-
-                                </div>
-                            </div>
                         </Col>
                     ))}
                 </Row>
