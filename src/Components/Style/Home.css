@@ -1,3 +1,7 @@
+.Carousel{
+  margin-top: 10px;
+}
+
 .Carousel-Caption {
     position: absolute;
     top: 80%;
@@ -120,6 +124,7 @@
   }
 
   .card-container {
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -130,7 +135,7 @@
     transition: transform 0.3s;
     width: 220px;
     overflow: hidden;
-    border-radius: 10%;
+    border-radius: 5%;
    }
 
  .card-image {
@@ -142,6 +147,7 @@
 
   .card-content{
     font-size: 12px;
+    padding-bottom: 8px;
   }
  
   .overlay {

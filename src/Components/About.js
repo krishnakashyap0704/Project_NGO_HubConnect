@@ -1,7 +1,6 @@
 import React from "react";
-import { Breadcrumb } from "react-bootstrap";
-//import { Header } from "./Header";
-//import { Footer } from "./Footer";
+import about from "./Image/about.jpg";
+import './Style/About.css';
 
 export function About(){
     return (
@@ -15,26 +14,23 @@ export function About(){
                 </h1>
               </div>
             <div>
-              <Breadcrumb>
-                <Breadcrumb.Item href="#">
-                  <span className="me-2">
-                    <i className="bi bi-house"></i>
-                  </span>
-                  <span>Home</span>
-                </Breadcrumb.Item>
-                <Breadcrumb.Item active>About Us</Breadcrumb.Item>
-              </Breadcrumb>
               <div className="hero-section">
-                 <h1 className="text-center text-white">REAL WORK. REAL CHANGE</h1>
+              <img
+                class="aboutimage"
+                className="d-block w-100"
+                src={about}
+                style={{height:"600px"}}
+              />
               </div>
             </div>
+            <br/>
             <div className="my-4">
-              <div class="page-title-sub">
-                <h3 className="text-white px-2">
+              <div class="abouttitle">
+                <h3 className="subtitle">
                   <strong>OUR STORY</strong>
                 </h3>
               </div>
-              <p className="">
+              <p className="subtext">
                 NGO CONNECT HUB was initiated in 2000 when a group of friends
                 came together with the intention of giving back to the society.
                 They were inspired by the thought and philosophy of Peter Senge,
@@ -42,8 +38,6 @@ export function About(){
                 propagated that “sustainability, social equality and the
                 environment are now business problems…” and corporate leaders
                 can’t expect governments to solve them alone.
-              </p>
-              <p>
                 What triggered these thoughts was the liberalisation of the
                 Indian economy in the 1990’s which brought with it immense
                 opportunities. Business revived, and India became not just a
@@ -54,36 +48,33 @@ export function About(){
                 towards the society
               </p>
             </div>
-
+            <br/>
             <div className="my-4">
-              <div class="page-title-sub">
-                <h3 className="text-white px-2">
+              <div class="abouttitle">
+                <h3 className="subtitle">
                   <strong>VISON</strong>
                 </h3>
               </div>
-              <p className="">
-                NWork as a catalyst in bringing sustainable change in the lives
+              <p className="subtext">
+                (1) NWork as a catalyst in bringing sustainable change in the lives
                 of lesser privileged children and families with a life-cycle
-                approach of development
-              </p>
-              <p>
-                Enable the civil society across the world to engage proactively
+                approach of development.<br/>
+                (2) Enable the civil society across the world to engage proactively
                 in the change process through the philosophy of civic driven
-                change
-              </p>
-              <p>
-                Adopt highest standards of governance to emerge as a leading
+                change.<br/>
+                (3) Adopt highest standards of governance to emerge as a leading
                 knowledge and technology driven, innovative and scalable
-                development institution
+                development institution.
               </p>
             </div>
+            <br/>
             <div className="my-4">
-              <div class="page-title-sub">
-                <h3 className="text-white px-2">
+              <div class="abouttitle">
+                <h3 className="subtitle">
                   <strong>MISSION</strong>
                 </h3>
               </div>
-              <p className="">
+              <p className="subtext">
                 NGO CONNECT HUB is to empower underprivileged children, youth
                 and women through relevant education, innovative healthcare and
                 market-focused livelihood programmes.NGO CONNECT HUB is to
@@ -95,13 +86,14 @@ export function About(){
                 Civic Driven Change.
               </p>
             </div>
+            <br/>
             <div className="my-4">
-              <div class="page-title-sub">
-                <h3 className="text-white px-2">
+              <div class="abouttitle">
+                <h3 className="subtitle">
                   <strong>PHILOSPOHY OF CHANGE</strong>
                 </h3>
               </div>
-              <p className="">
+              <p className="subtext">
                 While our focus as a development organisation has been first and
                 foremost to work on the ground for bringing positive change in
                 the lives of the less privileged children and families, we have

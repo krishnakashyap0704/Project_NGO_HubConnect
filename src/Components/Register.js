@@ -47,10 +47,12 @@ export function Register() {
 
     return (
         <>
-            <Container style={{ marginTop: '40px' }}>
-                <h1>Signup</h1>
+            <div className="Regdiv">
                 <Row>
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmit} className="Registerform">
+                        <div className="signup">
+                            <h1>Signup</h1>
+                        </div>
                         <Form.Group className="mb-3">
                             <Form.Label>Full Name</Form.Label>
                             <Form.Control type="text" placeholder="Enter full name" name="name" onKeyUp={handleChange} required />
@@ -98,7 +100,9 @@ export function Register() {
                             <Form.Label>Confirm Password</Form.Label>
                             <Form.Control type="password" placeholder="Confirm Password" name="confirmPassword" onKeyUp={handleChange} required />
                         </Form.Group>
-                        <Button variant="primary" type="submit">Register</Button>
+                        <div className="buttondiv">
+                        <Button className="formbutton" variant="primary" type="submit">Register</Button>
+                        </div>
                     </Form>
 
                 </Row>
@@ -107,7 +111,7 @@ export function Register() {
                         {isSubmitted ? <Alert variant="success">Successfully Registered</Alert> : null}
                     </Col>
                 </Row>
-            </Container>
+            </div>
         </>
     );
 }

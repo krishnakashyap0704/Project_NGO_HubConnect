@@ -1,0 +1,28 @@
+.QR{
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 5px;
+}
+
+.footer{
+    background-color: rgb(41, 36, 36);
+    color: white;
+    font-weight: 500;
+    padding-top: 3px;
+    padding-bottom: 5px;
+}
+
+.container{
+    margin-top: 10px;
+    
+}
+
+.row{
+    padding-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .footer{
+     font-size: 0.8em;
+  }
+ }

@@ -20,7 +20,7 @@ export function Contact(){
         <div>
             <div>
                 <Row>
-                    <Col xs={6}>
+                    <Col xs={6} className="Querycol">
                         <div class="Query">
                             <br />
                             <h6 class="Querytitle">ALL GENERAL QUERIES</h6>
@@ -41,17 +41,17 @@ export function Contact(){
                         </div>
                     </Col>
                     <Col xs={6}>
-                        <form method="post" onSubmit={handleSubmit}>
+                        <form method="post" onSubmit={handleSubmit} className='contactform'>
                             <h3 class="formtitle">HELPDESK</h3>
                             <p class="formcontent">For any grievance, suggestions and queries kindly write to us.</p>
                             <label htmlFor="">Name</label>
-                            <input type="text" name="name" id="" onChange={handleChange} value={data.name} placeholder="Enter Name"/>
+                            <input className="forminput" type="text" name="name" id="" onChange={handleChange} value={data.name} placeholder="Enter Name"/>
                             <label htmlFor="">Email</label>
-                            <input type="email" name="email" id="" onChange={handleChange} value={data.email} placeholder="example@email.com"/>
+                            <input className="forminput" type="email" name="email" id="" onChange={handleChange} value={data.email} placeholder="example@email.com"/>
                             <label htmlFor="">Phone</label>
-                            <input type="phone" name="phone" id="" onChange={handleChange} value={data.phone} placeholder="+91"/>
+                            <input className="forminput" type="phone" name="phone" id="" onChange={handleChange} value={data.phone} placeholder="+91"/>
                             <label htmlFor="">Message</label>
-                            <textarea name="message" id="" cols="30" rows="8" onChange={handleChange} value={data.message} placeholder="type here......"/><br />
+                            <textarea className="textarea" name="message" id="" cols="30" rows="8" onChange={handleChange} value={data.message} placeholder="type here......"/><br />
                             <button type="submit">Send</button><br /><br />
                         </form>
                     </Col>

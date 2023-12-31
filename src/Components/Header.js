@@ -3,6 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import './Style/Header.css';
+import logo from "./Image/logo.png";
 
 export function Header(){
     return (
@@ -10,12 +11,12 @@ export function Header(){
         <Navbar
         collapseOnSelect
         expand="lg"
-        className="bg-body-tertiary header"
+        className="primary"
         >
         <Container>
           <Navbar.Brand href="#home">
             <div style={{ width: "100px", height: "50px", overflow: "hidden" }}>
-              <img src="./logo1.png" alt="" className="img-fluid h-100" />
+              <img src="./logo.png" alt="" className="img-fluid h-100" />
             </div>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -23,10 +24,11 @@ export function Header(){
             <Nav className="me-auto">
             <Nav.Link href="/" className="Navlink">Home</Nav.Link>
               <Nav.Link href="/about" className="Navlink">About us</Nav.Link>
-              <Nav.Link href="#" className="Navlink">Events</Nav.Link> 
+              <Nav.Link href="/registerevent" className="Navlink">Events</Nav.Link> 
 
-              <NavDropdown title="NGO Directory " id="collapsible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
+              <Nav.Link href="#" className="Navlink">NGO Directory</Nav.Link>
+              <NavDropdown id="collapsible-nav-dropdown" >
+                <NavDropdown.Item href="#action/3.1"> 
                   NGO's (State-wise){" "}
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
@@ -36,7 +38,8 @@ export function Header(){
               <Nav.Link href="/contact" className="Navlink">Contact Us</Nav.Link>
             </Nav>
             <Nav>
-              <NavDropdown title="Register/login" id="collapsible-nav-dropdown">
+            <Nav.Link href="#" className="Navlink">Register/Login</Nav.Link>
+              <NavDropdown id="collapsible-nav-dropdown">
                 <NavDropdown.Item href="/adminLogin" className="Navlink">Admin</NavDropdown.Item>
                 <NavDropdown.Item href="/register" className="Navlink">Register</NavDropdown.Item>
                 <NavDropdown.Item href="/login" className="Navlink">Login</NavDropdown.Item>

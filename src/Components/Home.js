@@ -17,12 +17,12 @@ export function Home(){
     return(
       <>
         <div>
-        <Carousel data-bs-theme="dark">
+        <Carousel data-bs-theme="dark" className="Carousel" interval={3000} pause={false}>
         <Carousel.Item >
           <img
             class="Img"
             className="d-block w-100"
-            src={H1}
+            src={H2}
             alt="First slide"
           />
           <Carousel.Caption>
@@ -33,7 +33,7 @@ export function Home(){
           <img
             class="Img"
             className="d-block w-100"
-            src={H2}
+            src={H3}
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -44,7 +44,7 @@ export function Home(){
           <img
             class="Img"
             className="d-block w-100"
-            src={H3}
+            src={H4}
             alt="Third slide"
           />
           <Carousel.Caption>
@@ -55,7 +55,7 @@ export function Home(){
           <img
             class="Img"
             className="d-block w-100"
-            src={H4}
+            src={H5}
             alt="Fourth slide"
           />
           <Carousel.Caption>
@@ -66,7 +66,7 @@ export function Home(){
           <img
             class="Img"
             className="d-block w-100"
-            src={H5}
+            src={H1}
             alt="Fifth slide"
           />
           <Carousel.Caption>
