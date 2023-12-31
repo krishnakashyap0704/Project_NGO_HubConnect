@@ -2,6 +2,7 @@ import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useState } from "react";
 import { saveRegister } from "./Services/UserApiService";
 import { useNavigate } from "react-router-dom";
+import "./Style/Register.css";
 
 export function Register() {
     const navigate = useNavigate();
@@ -46,7 +47,7 @@ export function Register() {
 
     return (
         <>
-            <Container  style={{ marginTop: '40px' }}>
+            <Container style={{ marginTop: '40px' }}>
                 <h1>Signup</h1>
                 <Row>
                     <Form onSubmit={handleSubmit}>
@@ -103,7 +104,7 @@ export function Register() {
                 </Row>
                 <Row className="mt-3 mb-4">
                     <Col lg={4}>
-                        {isSubmitted ? <Alert variant="success">Student Registered</Alert> : null}
+                        {isSubmitted ? <Alert variant="success">Successfully Registered</Alert> : null}
                     </Col>
                 </Row>
             </Container>

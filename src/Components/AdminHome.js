@@ -1,11 +1,11 @@
 import { Button, Container, Form, Alert } from "react-bootstrap";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { LoginProfile } from "./Services/UserApiService";
+import { useNavigate } from "react-router-dom";
+import { LoginProfile } from "./Services/AdminApiService";
 
-export function Login() {
+export function AdminLogin() {
     const navigate = useNavigate();
-    const [formData, setFormData] = useState({ phone: "", password: "" });
+    const [formData, setFormData] = useState({ adminEmail: "", adminPassword: "" });
     const [loginError, setLoginError] = useState(false);
 
     const handleChange = (e) => {
@@ -18,7 +18,7 @@ export function Login() {
             const result = await LoginProfile(formData);
             console.log(result);
             if (result.status) {
-                navigate('/');
+                navigate('/adminService');
             }else{
                 setLoginError(true);
                 setTimeout(() => {
@@ -33,21 +33,20 @@ export function Login() {
     return (
         <Container className="d-flex align-items-center justify-content-center" style={{ height: '56vh' }}>
             <Form onSubmit={handleSubmit} style={{ width: '300px' }}>
-                <h2 className="mb-3">Login</h2>
+                <h2 className="mb-3">Admin Login</h2>
                 <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Mobile No</Form.Label>
-                    <Form.Control type="number" name="phone" placeholder="Enter mobile number" onChange={handleChange} />
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type="email" name="adminEmail" placeholder="Enter email" onChange={handleChange} />
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name="password" placeholder="Enter password" onChange={handleChange} />
+                    <Form.Control type="password" name="adminPassword" placeholder="Enter password" onChange={handleChange} />
                 </Form.Group><br />
 
                 <Button variant="primary" type="submit">
                     Sign in
                 </Button><br /><br />
-                <h6>Don't have a account? <Link to="/register">Register Now</Link></h6>
             </Form>
             {loginError ? <Alert variant="danger" className="mt-3">Invalid phone or password</Alert> : null}
         </Container>

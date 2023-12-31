@@ -36,9 +36,11 @@ export function Header(){
               <Nav.Link href="/contact" className="Navlink">Contact Us</Nav.Link>
             </Nav>
             <Nav>
-              <NavDropdown title="Register/logIn" id="collapsible-nav-dropdown">
-                <NavDropdown.Item href="#" className="Navlink">Admin</NavDropdown.Item>
-                <NavDropdown.Item href="#" className="Navlink">User</NavDropdown.Item>
+              <NavDropdown title="Register/login" id="collapsible-nav-dropdown">
+                <NavDropdown.Item href="/adminLogin" className="Navlink">Admin</NavDropdown.Item>
+                <NavDropdown.Item href="/register" className="Navlink">Register</NavDropdown.Item>
+                <NavDropdown.Item href="/login" className="Navlink">Login</NavDropdown.Item>
+                <NavDropdown.Item href="#" className="Navlink">Support</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
