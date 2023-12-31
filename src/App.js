@@ -13,6 +13,7 @@ import { About } from './Components/About';
 import { AdminLogin } from './Components/AdminHome.js';
 import { AdminService } from './Components/AdminService.js';
 import { UpdateUser } from './Components/UpdateUser.js';
+import { Events } from './Components/Events.js';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
     <Route path='/adminLogin' element={<AdminLogin/>}></Route>
     <Route path='/adminService' element={<AdminService/>}></Route>
     <Route path='/updateUser/:id' element={<UpdateUser/>}></Route>
+    <Route path='/events' element={<Events/>}></Route>
 
     </Routes>
     <Footer/>
