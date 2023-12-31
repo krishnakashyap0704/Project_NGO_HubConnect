@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { updateProfile, fetchProfileById } from './Services/UserApiService';
+import { Button, Modal } from 'react-bootstrap';
 
 export const UpdateUser = () => {
   const { id } = useParams();
+  const [showDialog, setShowDialog] = useState(false);
   const [userData, setUserData] = useState({
     phone: '',
     dateOfBirth: '',
@@ -34,11 +36,20 @@ export const UpdateUser = () => {
       [name]: value,
     }));
   };
-   const handleUpdate = async () => {
+
+  const openModalDialog = () => {
+    setShowDialog(true);
+  };
+  const closeModalDialog = () => {
+    setShowDialog(false);
+  };
+
+  const handleUpdate = async () => {
     try {
-      const response = await updateProfile(id, userData.phone, userData.dateOfBirth, userData.email);
+      const response = await updateProfile(id, userData);
       console.log('User updated successfully:', response);
       toast.success('User updated successfully!');
+      openModalDialog();
     } catch (error) {
       console.error('Error updating user:', error);
       toast.error('Error updating user');
@@ -92,6 +103,17 @@ export const UpdateUser = () => {
           Update
         </button>
       </form>
+      <Modal show={showDialog} onHide={closeModalDialog}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirmation</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>You are successfully Updated !</Modal.Body>
+        <Modal.Footer>
+          <Button variant="success" onClick={closeModalDialog}>
+            Ok
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };

@@ -1,7 +1,4 @@
 import axios from "axios";
-import { BASE_URL } from "../Constant/ConstantURL";
-
-
 
 export async function fetchEvents(){
     try {
@@ -15,7 +12,7 @@ export async function fetchEvents(){
 }
 
 export async function registerEvent(credentials){
-    const response=await axios.post(`${BASE_URL}register-event`,credentials);
+    const response=await axios.post('http://127.0.0.1:9090/register-event',credentials);
     return response.data;
 }
 

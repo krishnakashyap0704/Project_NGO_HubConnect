@@ -42,9 +42,9 @@ export async function deleteProfile(id) {
 };
 
 //Update the users
-export async function updateProfile(id, phone, dateOfBirth, email) {
+export async function updateProfile(id, userData) {
   try {
-    const response = await axios.put(`${BASE_URL}update/${id}`, { phone, dateOfBirth, email });
+    const response = await axios.put(`${BASE_URL}update/${id}`,userData);
     return response.data;
   } catch (error) {
     console.log(error);
