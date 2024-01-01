@@ -19,6 +19,10 @@ export function Login() {
             const result = await LoginProfile(formData);
             console.log(result);
             if (result.status) {
+                 // Store user information in local storage
+                 localStorage.setItem('isLoggedIn', true);
+                 // Other user data can be stored if needed
+                 // localStorage.setItem('userData', JSON.stringify(result.userData));
                 navigate('/');
             }else{
                 setLoginError(true);
@@ -30,9 +34,19 @@ export function Login() {
            console.log(error);
         }
     }
+    const handleLogout = () => {
+        // Clear user information from local storage
+        localStorage.removeItem('isLoggedIn');
+        // Other user data can be cleared if needed
+        // localStorage.removeItem('userData');
+        // Redirect to login page
+        navigate('/login');
+    }
+
 
     return (
         <div className="d-flex" >
+            {!localStorage.getItem('isLoggedIn') ? (
             <Form onSubmit={handleSubmit}  className="Loginform">
                 <div className="logintitle"><h2 className="mb-3">Login</h2></div>
                 <Form.Group controlId="formBasicEmail">
@@ -48,6 +62,12 @@ export function Login() {
                 <button type="submit" className="Registerbutton">Login</button><br /><br />
                 <h6>Don't have a account? <Link to="/register">Register Now</Link></h6></div>
              </Form>
+             ) : (
+                // Display logout button if logged in
+                <div className="logintitle">
+                    <button onClick={handleLogout} className="Registerbutton">Logout</button><br /><br />
+                </div>
+            )}
             {loginError?<Alert variant="danger" className="mt-3">Invalid phone or password</Alert>:null}
         </div>
     );

@@ -104,13 +104,12 @@ export function Register() {
                         <button type="submit" className="Registerbutton">Register</button>
                         </div>
                     </Form>
-
                 </Row>
-                <Row className="mt-3 mb-4">
+                <Col className="mt-3 mb-4">
                     <Col lg={4}>
                         {isSubmitted ? <Alert variant="success">Successfully Registered</Alert> : null}
                     </Col>
-                </Row>
+                </Col>
             </div>
         </>
     );

@@ -44,7 +44,7 @@ export const Events = () => {
     return (
         <>
             <div className="container">
-            <h2>Upcoming Events</h2>
+            <h2 style={{ textAlign: 'center', color: 'navy' , margin:"5px"}} >Upcoming Events</h2>
                 <Row className="justify-content-md-center">
                     {events.map((ev) => (
                         <Col lg={3}>

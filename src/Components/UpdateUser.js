@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { updateProfile, fetchProfileById } from './Services/UserApiService';
 import { Button, Modal } from 'react-bootstrap';
+import "./Style/updateUser.css";
+
 
 export const UpdateUser = () => {
   const { id } = useParams();
@@ -46,7 +48,7 @@ export const UpdateUser = () => {
 
   const handleUpdate = async () => {
     try {
-      const response = await updateProfile(id, userData);
+      const response = await updateProfile(id, userData.phone, userData.dateOfBirth, userData.email);
       console.log('User updated successfully:', response);
       toast.success('User updated successfully!');
       openModalDialog();
@@ -57,9 +59,9 @@ export const UpdateUser = () => {
   };
 
   return (
-    <div className="container">
-      <h2 style={{ textAlign: 'center', color: 'navy' }}>Update User Details</h2>
-      <form>
+    <div className="d-flex">
+      <form className="updateTitle">
+        <h2 style={{ textAlign: 'center', color: 'navy' }}>Update User Details</h2>
         <div className="mb-3">
           <label htmlFor="phone" className="form-label">
             Phone
@@ -99,9 +101,11 @@ export const UpdateUser = () => {
             onChange={handleInputChange}
           />
         </div>
-        <button type="button" className="btn btn-primary" onClick={handleUpdate}>
-          Update
-        </button>
+        <div className="buttondiv">
+          <button type="button" className="updbutton" onClick={handleUpdate}>
+            Update
+          </button>
+        </div>
       </form>
       <Modal show={showDialog} onHide={closeModalDialog}>
         <Modal.Header closeButton>
