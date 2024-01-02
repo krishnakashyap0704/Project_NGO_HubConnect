@@ -47,6 +47,7 @@ export function AdminLogin() {
 
                 <div  className="A-logintitle">
                 <button type="submit" className="Registerbutton">Login</button></div><br /><br />
+                <strong>Alert !!!! Only for Administrative Service</strong>
             </Form>
             {loginError ? <Alert variant="danger" className="mt-3">Invalid phone or password</Alert> : null}
         </div>

@@ -48,7 +48,7 @@ export function Login() {
         <div className="d-flex" >
             {!localStorage.getItem('isLoggedIn') ? (
             <Form onSubmit={handleSubmit}  className="Loginform">
-                <div className="logintitle"><h2 className="mb-3">Login</h2></div>
+                <div className="logintitle"><h1 className="mb-3">Login</h1></div>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label className="label">Mobile No</Form.Label>
                     <Form.Control type="number" name="phone" placeholder="Enter mobile number" onChange={handleChange}/>

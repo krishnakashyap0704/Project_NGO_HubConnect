@@ -44,11 +44,11 @@ export const Events = () => {
     return (
         <>
             <div className="container">
-            <h2 style={{ textAlign: 'center', color: 'navy' , margin:"5px"}} >Upcoming Events</h2>
+            <h2 style={{ textAlign: 'center', color: 'navy' , margin:"30px"}} >Upcoming Events</h2>
                 <Row className="justify-content-md-center">
                     {events.map((ev) => (
                         <Col lg={3}>
-                                    <Card style={{ height: "700px", width: "280px" , borderRadius:"2%"}}>
+                                    <Card style={{ height: "700px", width: "280px" , borderRadius:"2%", margin:"20px"}}>
                                         <Card.Img
                                             variant="top"
                                             src={process.env.PUBLIC_URL + ev.image}
@@ -66,7 +66,7 @@ export const Events = () => {
 
                                                 setSelectedEvent(ev.id);
                                                 handleRegister();
-                                            }}>Register</Button>
+                                            }}>Enroll</Button>
                                         </Card.Body>
                                     </Card>
                         </Col>
