@@ -48,7 +48,7 @@ export const UpdateUser = () => {
 
   const handleUpdate = async () => {
     try {
-      const response = await updateProfile(id, userData.phone, userData.dateOfBirth, userData.email);
+      const response = await updateProfile(id, userData);
       console.log('User updated successfully:', response);
       toast.success('User updated successfully!');
       openModalDialog();

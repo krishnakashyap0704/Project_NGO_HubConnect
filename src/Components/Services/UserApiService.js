@@ -4,7 +4,7 @@ import { BASE_URL } from "../Constant/ConstantURL";
 // api for storing user data 
 export async function saveRegister(formData) {
   try {
-    const response = await axios.post(`${BASE_URL}register`, formData);
+    const response = await axios.post(`${BASE_URL}user/register`, formData);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -12,19 +12,19 @@ export async function saveRegister(formData) {
 };
 
 //api for login user
-export async function LoginProfile(formData) {
+export async function loginProfile(formData) {
   try {
-    const response = await axios.post(`${BASE_URL}login`, formData);
+    const response = await axios.post(`${BASE_URL}user/login`, formData);
     return response.data;
   } catch (error) {
     console.log(error);
   }
 };
 
-//api for fetch all the users
+//fetch all the users
 export async function fetchProfile() {
   try {
-    const response = await axios.get(`${BASE_URL}fetch`);
+    const response = await axios.get(`${BASE_URL}user/fetch/all`);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -34,27 +34,27 @@ export async function fetchProfile() {
 //delete the users
 export async function deleteProfile(id) {
   try {
-    const response = await axios.delete(`${BASE_URL}deleteUser/${id}`);
+    const response = await axios.delete(`${BASE_URL}user/delete/${id}`);
     return response.data;
   } catch (error) {
     console.log(error);
   }
 };
 
-//Update the users
-export async function updateProfile(id, phone, dateOfBirth, email) {
+//update the users
+export async function updateProfile(id,userData) {
   try {
-    const response = await axios.put(`${BASE_URL}update/${id}`, { phone, dateOfBirth, email });
+    const response = await axios.put(`${BASE_URL}user/update/${id}`, userData);
     return response.data;
   } catch (error) {
     console.log(error);
   }
 };
 
-//api for fetch the users
+//fetch the users
 export async function fetchProfileById(id) {
   try {
-    const response = await axios.get(`${BASE_URL}fetchbyid/${id}`);
+    const response = await axios.get(`${BASE_URL}user/fetchbyid/${id}`);
     return response.data;
   } catch (error) {
     console.log(error);

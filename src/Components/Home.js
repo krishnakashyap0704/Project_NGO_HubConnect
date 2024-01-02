@@ -129,7 +129,7 @@ export function Home(){
         </Row>
         <Row>
           <h4 class="text3-1">TO BECOME A PART OF CHANGE</h4>
-          <h6 class="text3-1">Check our <a href="#" class="a">Events</a> and become a part of it</h6>
+          <h6 class="text3-1">Check our <a href="/events" class="a">Events</a> and become a part of it</h6>
         </Row>
         <br />
       </div>

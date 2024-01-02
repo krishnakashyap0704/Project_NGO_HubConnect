@@ -1,7 +1,7 @@
 import {Form, Alert } from "react-bootstrap";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { LoginProfile } from "./Services/UserApiService";
+import { loginProfile } from "./Services/UserApiService";
 import './Style/Login.css';
 
 export function Login() {
@@ -16,7 +16,7 @@ export function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const result = await LoginProfile(formData);
+            const result = await loginProfile(formData);
             console.log(result);
             if (result.status) {
                  // Store user information in local storage

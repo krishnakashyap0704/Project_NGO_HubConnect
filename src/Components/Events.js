@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Modal, Row } from "react-bootstrap";
-import { fetchEvents, registerEvent } from "./Services/EventService.js";
+import { fetchEvents, registerEvent } from "./Services/EventApiService.js";
 
 export const Events = () => {
 
-    var userId = 31;
+    var userId = 51;
     const [events, setEvents] = useState([]);
     const [showDialog, setShowDialog] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState("");
